@@ -1,11 +1,8 @@
 import os
-from dotenv import load_dotenv, find_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, BaseMessage
 from colorama import Fore, Style
 from typing import Optional
-
-_ = load_dotenv(find_dotenv()) # read .env file
 
 BASE_MODEL = "qwen-plus"
 
