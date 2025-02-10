@@ -1,3 +1,6 @@
-from ai.models import get_completion
+from .models import model, get_completion
 
-__all__ = ['get_completion']
+__all__ = [
+    "model", 
+    "get_completion"
+]

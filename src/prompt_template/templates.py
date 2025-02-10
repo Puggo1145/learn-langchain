@@ -1,5 +1,5 @@
 from langchain.prompts import ChatPromptTemplate
-from parser import format_instructions
+from parser.review_parser import format_instructions
 
 # email prompt
 email_template_string = """Translate the text \
