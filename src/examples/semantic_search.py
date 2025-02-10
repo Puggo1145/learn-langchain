@@ -38,16 +38,16 @@ def split_document_text(doc: List[Document]):
     return splits
 
 
-def text_embedding(splits: List[Document]):
-    print("Step 3/3: 文本嵌入")
+# def text_embedding(splits: List[Document]):
+#     print("Step 3/3: 文本嵌入")
 
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
-        api_key = getpass.getpass("Enter your API key for OpenAI: ")
+#     api_key = os.environ.get("OPENAI_API_KEY")
+#     if not api_key:
+#         api_key = getpass.getpass("Enter your API key for OpenAI: ")
     
-    for index, split in enumerate(splits):
-        embeddings.embed_query(split.page_content)
-        print(f"完成第 {index + 1} 个文本嵌入")
+#     for index, split in enumerate(splits):
+#         embeddings.embed_query(split.page_content)
+#         print(f"完成第 {index + 1} 个文本嵌入")
 
 
 def search(query: str, search_method: str) -> None:
@@ -69,6 +69,11 @@ def search(query: str, search_method: str) -> None:
     print("\n")
     
 
+def add_documents_into_vector_store(splits: List[Document]):
+    print("Step 3/3 嵌入文本并存储")
+    vectors_store.add_documents(documents=splits) # add documents 这里会自动帮我们完成嵌入工作
+
+
 def semantic_search_example():
     print("正在进行查询前的准备，请稍后...")
     
@@ -78,8 +83,7 @@ def semantic_search_example():
     
     # 文本嵌入并存储
     test_splits = splits[:10] # 这里我们不嵌入整个文档
-    text_embedding(splits=test_splits)
-    vectors_store.add_documents(documents=test_splits)
+    add_documents_into_vector_store(splits=test_splits)
 
     # 检索
     print("\n准备完成，请选择你的检索方式：")
