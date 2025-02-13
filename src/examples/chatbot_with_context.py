@@ -85,7 +85,7 @@ def chatbot_with_context_example():
         
         # 这是普通的输出模型，模型在将回答生成完成后再返回答案
         # output = app.invoke({"messages": user_message}, EXAMPLE_CONFIG)
-        # typed_response = cast(List[BaseMessage], output["messages"])
+        # typed_response = cast(List[BaseMessage], outputh["messages"])
         # print(typed_response[-1].content)
         
         # 使用流式传输
