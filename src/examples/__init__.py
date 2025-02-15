@@ -8,6 +8,7 @@ from .chatbot_with_context import chatbot_with_context_example
 from .agent import agent_example
 from .rag_1 import rag_one_example
 from .rag_2 import rag_two_example
+from .summary import summary_example
 
 __all__ = [
     "semantic_search_example",
@@ -18,4 +19,5 @@ __all__ = [
     "agent_example",
     "rag_one_example",
     "rag_two_example",
+    "summary_example"
 ]
